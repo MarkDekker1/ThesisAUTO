@@ -18,6 +18,7 @@ plot1.config(bifurcation_y=['T'],bifurcation_x=['eta2'], stability=True,
 			hopf_symbol='filltriangle',
 			bifurcation_symbol='fillsquare',
 			limit_point_symbol='fillcircle',
+			user_point_symbol='',
 			error_symbol='')
 plot1.config(ylabel='Temperature', ylabel_fontsize=15, xlabel='Parameter $\eta_2$', xlabel_fontsize=15)
 plot1.config(minx=0,maxy=2.2)
@@ -30,6 +31,7 @@ plot2.config(bifurcation_y=['S'],bifurcation_x=['eta2'], stability=True,
 			hopf_symbol='filltriangle',
 			bifurcation_symbol='fillsquare',
 			limit_point_symbol='fillcircle',
+			user_point_symbol='',
 			error_symbol='')
 plot2.config(ylabel='Salinity', ylabel_fontsize=15, xlabel='Parameter $\eta_2$', xlabel_fontsize=15)
 plot2.config(minx=0,maxy=2.5)
