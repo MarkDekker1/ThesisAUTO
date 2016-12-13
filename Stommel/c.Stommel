@@ -1,0 +1,12 @@
+parnames = {1:'eta1', 2:'eta2', 3: 'eta3'}
+unames = {1:'T', 2:'S'}
+
+NDIM=   2, IPS =   1, IRS =   0, ILP =   1
+ICP =  ['eta2']
+NTST=  15, NCOL=   4, IAD =   3, ISP =   1, ISW = 1, IPLT= 0, NBC= 0, NINT= 0
+NMX=  250, NPR=  250, MXBF=  -1, IID =   2, ITMX= 8, ITNW= 5, NWTN= 3, JAC= 0
+EPSL= 1e-07, EPSU = 1e-07, EPSS = 1e-05
+DS  =   0.1, DSMIN=  0.01, DSMAX=  0.25, IADS=   1
+NPAR=   3, THL =  {}, THU =  {}
+UZR =  {'eta1': [2.0, 4.0], 'eta3': [0.0,1.0]}
+UZSTOP = {'eta2': [-0.5,3.0]}

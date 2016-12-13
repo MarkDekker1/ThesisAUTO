@@ -1,0 +1,38 @@
+
+#=============
+# Stommel Ocean model
+#=============
+
+print "\n***Generate starting data***"
+RUN=run(e='Stommel',c='Stommel')
+RUN=RUN+ run(e='Stommel',c='Stommel',DS='-')
+
+print "\n***Relabel and save the output files***"
+RUN=rl(RUN)
+sv(RUN,'RUN')
+
+plot1=plot(RUN)
+plot1.config(bifurcation_y=['T'],bifurcation_x=['eta2'], stability=True,
+			use_labels=False, use_symbols=True,
+			coloring_method='type',
+			hopf_symbol='filltriangle',
+			bifurcation_symbol='fillsquare',
+			limit_point_symbol='fillcircle',
+			error_symbol='')
+plot1.config(ylabel='Temperature', ylabel_fontsize=15, xlabel='Parameter $\eta_2$', xlabel_fontsize=15)
+plot1.config(minx=0,maxy=2.2)
+
+
+plot2=plot(RUN)
+plot2.config(bifurcation_y=['S'],bifurcation_x=['eta2'], stability=True,
+			use_labels=False, use_symbols=True,
+			coloring_method='type',
+			hopf_symbol='filltriangle',
+			bifurcation_symbol='fillsquare',
+			limit_point_symbol='fillcircle',
+			error_symbol='')
+plot2.config(ylabel='Salinity', ylabel_fontsize=15, xlabel='Parameter $\eta_2$', xlabel_fontsize=15)
+plot2.config(minx=0,maxy=2.5)
+
+print "\n***Clean the directory***"
+cl()
