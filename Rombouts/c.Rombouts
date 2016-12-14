@@ -1,0 +1,11 @@
+parnames = {1:'Ct',2:'Q0',3:'p',4:'av',5:'ag',6:'alphamax',7:'alphamin',8: 'Tal',9:'Tau', 10:'B0', 11: 'B1', 12: 'Topt', 13: 'k', 14:'gmma'}
+unames = {1:'T', 2:'A'}
+
+NDIM=   2, IPS =   1, IRS =   0, ILP =   1
+ICP =  ['gmma']
+NTST=  15, NCOL=   4, IAD =   3, ISP =   1, ISW = 1, IPLT= 0, NBC= 0, NINT= 0
+NMX=  5000, NPR=  250, MXBF=  -1, IID =   3, ITMX= 8, ITNW= 5, NWTN= 3, JAC= 0
+EPSL= 1e-07, EPSU = 1e-07, EPSS = 1e-05
+DS  =   1e-6, DSMIN=  1e-7, DSMAX=  1e-2, IADS=   1
+NPAR=   14, THL =  {}, THU =  {}
+UZSTOP = {'gmma': [-0.5,1.0]}

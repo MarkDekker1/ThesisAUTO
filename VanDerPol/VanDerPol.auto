@@ -1,0 +1,27 @@
+
+#===========================
+# VanDerPol Oscillator
+#===========================
+
+print "\n***Generate starting data***"
+RUN=run(e='VanDerPol',c='VanDerPol')
+RUN=RUN+ run(e='VanDerPol',c='VanDerPol',DS='-')
+
+print "\n***Relabel and save the output files***"
+RUN=rl(RUN)
+sv(RUN,'RUN')
+
+plot1=plot(RUN)
+plot1.config(bifurcation_y=['x'],bifurcation_x=['mu'], stability=True,
+			letter_symbols=False,
+			coloring_method='type')
+plot1.config(ylabel='Variable x', ylabel_fontsize=15, xlabel='Parameter $\mu$', xlabel_fontsize=15)
+#plot1.config(minx=-0.2,maxx=0.5,miny=260,maxy=300)
+
+RUN2=run(RUN("UZ1"))#RUN('HB1'), ICP=['mu','PERIOD'], IPS=2, NPR=25, IADS=0,
+    #UZR={'mu': [-1.0,-0.1,0.1, 1.0]})
+plot2=plot(RUN2)
+#plot2.config(solution_y=['y'], solution_x=['x'], stability=True, type='solution')
+
+print "\n***Clean the directory***"
+cl()

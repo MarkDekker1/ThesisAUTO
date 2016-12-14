@@ -1,0 +1,26 @@
+
+#===========================
+# Brusselator
+#===========================
+
+print "\n***Generate starting data***"
+
+RUN=run(e='Brusselator',c='Brusselator')
+RUN=RUN+ run(e='Brusselator',c='Brusselator',DS='-')
+
+print "\n***Relabel and save the output files***"
+RUN=rl(RUN)
+sv(RUN,'RUN')
+
+plot1=plot(RUN)
+plot1.config(stability=True)
+#			letter_symbols=False,
+#			coloring_method='type')
+#plot1.config(minx=-0.2,maxx=0.5,miny=260,maxy=300)
+
+RUN2=run(RUN("HB"),IPS=2,NPR=2)
+plot1=plot(RUN2)
+plot1.config(type='solution')
+
+print "\n***Clean the directory***"
+cl()
