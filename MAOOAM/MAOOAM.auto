@@ -1,0 +1,29 @@
+#===================================================
+# MAOOAM general auto file
+#===================================================
+
+print "\n***Generate starting data***"
+
+RUN=run(e='MAOOAM',c='MAOOAM')
+#RUN = RUN+run(RUN("UZ"),DS='-')
+
+print "\n***Relabel and save the output files***"
+RUN=rl(RUN)
+sv(RUN,'RUN')
+p1=plot(RUN)
+p1.config(stability=True)
+
+#RUN2=run(RUN("UZ"),IPS=1, ICP=['d'], UZR={'d':1.e-7})
+#RUN25=run(RUN2("UZ"),IPS=1, ICP=['Co'])
+#RUN3=RUN+RUN25
+
+#RUN4=run(RUN("UZ"),IPS=1, ICP=['d'], UZR={'d':1.e-9},DS='-')
+#RUN5=RUN3+run(RUN4("UZ"),IPS=1, ICP=['Co'],DS=1e-3)
+#plot1=plot(RUN5)
+#plot1.config(stability=True)
+
+#RUN2=run(RUN("HB1"),IPS=2)
+#p2=plot(RUN2)
+
+print "\n***Clean the directory***"
+cl()

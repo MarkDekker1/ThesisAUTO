@@ -1,0 +1,71 @@
+#===================================================
+# Primary settings
+#===================================================
+
+# Problem Constants
+NDIM=36
+
+# Output Control
+unames={1: 'X1', 2: 'X2', 3: 'X3', 4: 'X4', 5: 'X5', 6: 'X6', 7: 'X7', 8: 'X8',9: 'X9',
+	10: 'X10',11: 'X11',12: 'X12',13: 'X13',14: 'X14',15: 'X15',16: 'X16',17: 'X17',18: 'X18',19: 'X19',
+	20: 'X20',21: 'X21',22: 'X22',23: 'X23',24: 'X24',25: 'X25',26: 'X26',27: 'X27',28: 'X28',29: 'X29',
+	30: 'X30',31: 'X31',32: 'X32',33: 'X33',34: 'X34',35: 'X35',36: 'X36'}
+parnames={1: 'lda', 2:'Co', 3:'d'}
+NPR=25
+
+# Free Parameters
+ICP=['Co']
+
+# Limits
+UZR={'Co':10}
+UZSTOP={'Co':[-500,500],'d':[0,1e-7]}, NMX=1000
+
+# Computation Constants
+IPS=1, IRS=0
+
+# Continuation Step Size
+DS=1e-3, DSMIN=1e-5, DSMAX=1e0
+#DS=5e-11, DSMIN=1e-11, DSMAX=1e-10
+
+# Discretization Constants
+NTST=5
+
+#===================================================
+# Secondary settings
+#===================================================#
+
+# Problem Constants
+NPAR=4, JAC=0
+
+# Discretization Constants
+#NCOL=4, IAD=3
+
+# Tolerances
+EPSL=1e-9, EPSU=1e-9, EPSS=1e-6, ITMX=8, NWTN=3, ITNW=5, IIS=3
+
+# Continuation Step Size
+IADS=1, THL={}, THU={}
+
+# Limits
+#STOP = []
+#RL0=-1.7976e+308, RL1=1.7976e+308, A0=-1.7976e+308, A1=1.7976e+308
+
+# Computation Constants
+#ILP=1, SP=[], ISP=2, ISW=1, MXBF=10, s='', dat='', U={}, PAR={}, TY=''
+
+# Output Control
+#e = '', sv='', IBR=0, LAB=0, IIS=3, IID=2, IPLT=0, UZR={}
+
+#===================================================
+# Inactive (now unimportant) settings
+#===================================================
+
+# Problem Constants
+#NBC=0, NINT=0
+
+#===================================================
+# Homcont settings
+#===================================================
+
+#NUNSTAB = -1, NSTAB = -1, IEQUIB = 1, ITWIST = 0, ISTART = 5
+#IREV = [], IFIXED = [], IPSI = []

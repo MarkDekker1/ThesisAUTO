@@ -1,0 +1,30 @@
+#===================================================
+# MAOOAM general auto file
+#===================================================
+
+print "\n***Generate starting data***"
+
+RUN=run(e='MAOOAM',c='MAOOAM')
+#RUN = RUN+run(RUN("UZ"),DS='-')
+
+print "\n***Relabel and save the output files***"
+RUN=rl(RUN)
+sv(RUN,'RUN')
+
+plot1=plot(RUN)
+
+#RUN2=[]
+#for solution in RUN():
+#	RUN2=RUN2+run(solution,ICP=['d'],DS=1e-3, DSMIN=1e-5, DSMAX=1e0)
+#plot(RUN2)
+#plot1.config(stability=True)
+#			letter_symbols=False,
+#			coloring_method='type')
+#plot1.config(minx=-0.2,maxx=0.5,miny=260,maxy=300)
+
+#RUN2=run(RUN("HB"),IPS=2, EPSL= 1e-2, EPSU = 1e-1, EPSS = 1e0)
+#plot1=plot(RUN2)
+#plot1.config(type='solution')
+
+print "\n***Clean the directory***"
+cl()
