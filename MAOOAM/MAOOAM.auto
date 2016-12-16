@@ -4,26 +4,28 @@
 
 print "\n***Generate starting data***"
 
-RUN=run(e='MAOOAM',c='MAOOAM')
-#RUN = RUN+run(RUN("UZ"),DS='-')
+print "\n***Run with parameter Co***"
+RUN0=run(e='MAOOAM',c='MAOOAM')
+p0=plot(RUN0)
+p0.config(stability=True)
 
-print "\n***Relabel and save the output files***"
-RUN=rl(RUN)
-sv(RUN,'RUN')
-p1=plot(RUN)
+print "\n***Runs with parameter d***"
+RUN1 = run(RUN0("UZ"),ICP=['d'],DS=1e-9, DSMIN=1e-10, DSMAX=1e-3)
+RUN2 = RUN1 + run(RUN0("UZ"),ICP=['d'],DS=-1e-9, DSMIN=1e-10, DSMAX=1e-3, NMX=1000)
+RUN2=rl(RUN2)
+sv(RUN2,'RUN')
+p1=plot(RUN2)
 p1.config(stability=True)
 
-#RUN2=run(RUN("UZ"),IPS=1, ICP=['d'], UZR={'d':1.e-7})
-#RUN25=run(RUN2("UZ"),IPS=1, ICP=['Co'])
-#RUN3=RUN+RUN25
+print "\n***Runs with parameter lambda***"
+RUN6=run(RUN0("UZ"),ICP=['lda'],DS=1e-6, DSMIN=1e-7, DSMAX=1e-3,NMX=50000)
+p6=plot(RUN6)
+p6.config(stability=True)
 
-#RUN4=run(RUN("UZ"),IPS=1, ICP=['d'], UZR={'d':1.e-9},DS='-')
-#RUN5=RUN3+run(RUN4("UZ"),IPS=1, ICP=['Co'],DS=1e-3)
-#plot1=plot(RUN5)
-#plot1.config(stability=True)
-
-#RUN2=run(RUN("HB1"),IPS=2)
-#p2=plot(RUN2)
+print "\n***Check Hopf bifurcation periodicity***"
+RUN7=run(RUN0("HB"),IPS=2)
+p7=plot(RUN7)
+p7.config(stability=True)
 
 print "\n***Clean the directory***"
 cl()

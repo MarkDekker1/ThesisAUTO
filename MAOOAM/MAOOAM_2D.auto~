@@ -1,0 +1,23 @@
+#===================================================
+# MAOOAM general auto file
+#===================================================
+
+print "\n***Generate starting data***"
+
+print "\n***Run with parameter Co***"
+RUN0=run(e='MAOOAM',c='MAOOAM')
+
+print "\n***Runs with parameter d***"
+RUN1 = run(RUN0("UZ"),ICP=['d','lda','Co'],DS=1e-9, DSMIN=1e-10, DSMAX=1e-3)
+RUN2 = RUN1 + run(RUN0("UZ"),ICP=['d'],DS=-1e-9, DSMIN=1e-10, DSMAX=1e-3, NMX=1000)\
+
+print "\n***Runs with parameter lambda***"
+RUN6=run(RUN0("UZ"),ICP=['lda','d','Co'],DS=1e-6, DSMIN=1e-7, DSMAX=1e-3,NMX=50000)\
+
+print "\n***Save and plot***"
+RUNtot=RUN0+RUN1+RUN2+RUN6
+RUNtot=rl(RUNtot)
+plot(RUNtot)
+
+print "\n***Clean the directory***"
+cl()
